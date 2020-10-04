@@ -298,7 +298,28 @@
 
 			var date = new Date();
 
-			var date_str = date.getDate() + '/' + (parseInt(date.getMonth(), 10)+1) + '/' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes() + ' Androemeda Time';
+			var hours = '';
+			var minutes = '';
+
+			if(date.getHours()<10)
+			{
+				hours = '0' + date.getHours();
+			}
+			else
+			{
+				hours = '' + date.getHours();
+			}
+
+			if(date.getMinutes()<10)
+			{
+				minutes = '0' + date.getMinutes();
+			}
+			else
+			{
+				minutes = '' + date.getMinutes();
+			}
+
+			var date_str = date.getDate() + '/' + (parseInt(date.getMonth(), 10)+1) + '/' + date.getFullYear() + ' ' + hours + ':' + minutes + ' Androemeda Time';
 
 			document.getElementById('today').innerHTML = date_str;
 
